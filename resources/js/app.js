@@ -1,7 +1,5 @@
 import './bootstrap';
 import { createApp } from 'vue';
-import ExampleComponent from './Components/ExampleComponent.vue';
+import App from './App.vue';
 
-const app = createApp({});
-app.component('example-component', ExampleComponent);
-app.mount('#app');
+createApp(App).mount('#app');
