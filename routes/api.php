@@ -33,3 +33,8 @@ Route::apiResource('notes', NoteController::class);
 Route::apiResource('medias', MediaController::class);
 Route::apiResource('partages', PartageController::class);
 Route::apiResource('historiques', HistoriqueController::class);
+
+use App\Http\Controllers\AuthController;
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
