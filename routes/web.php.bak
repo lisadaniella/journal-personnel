@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 use Illuminate\Support\Facades\Route;
 
@@ -6,9 +6,4 @@ use Illuminate\Support\Facades\Route;
 // Exclut explicitement les URLs commençant par "api/"
 Route::get('/{any}', function () {
     return view('app');
-    })->where('any', '^(?!api).*$');
-
-// Route pour afficher la page d'accueil
-Route::get('/', function () {
-    return view('welcome');
-});
+})->where('any', '^(?!api).*$');
