@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Journal Personnel</title>
-    @vite('resources/js/main.js') <!-- point d'entrée Vue -->
+    @vite(['resources/js/main.js'])
+ <!-- point d'entrée Vue -->
 </head>
 <body>
     <div id="app"></div>

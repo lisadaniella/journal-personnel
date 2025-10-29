@@ -1,15 +1,27 @@
 <?php
-
+// Backup of corrupted api.php
+// Created by assistant before repair
+<?php
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UtilisateurController;
-use App\Http\Controllers\CategorieController;
-use App\Http\Controllers\NoteController;
-use App\Http\Controllers\MediaController;
-use App\Http\Controllers\PartageController;
-use App\Http\Controllers\HistoriqueController;
-use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\{
+    UtilisateurController,
+    CategorieController,
+    NoteController,
+    MediaController,
+    PartageController,
+    HistoriqueController,
+    LoginController
+};
+
+Log::info('Loading API routes from routes/api.php');
+
+// Route de test simple pour vérifier le chargement des routes API
+Route::get('/api-test', function() {
+    return response()->json(['message' => 'API routes are loaded!']);
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +32,13 @@ use App\Http\Controllers\LoginController;
 | Exemple : http://127.0.0.1:8000/api/notes
 |
 */
+
+// Test rapide pour vérifier que les POST sont bien pris en compte
+Log::info('Including routes/api.php');
+// ---
+Route::post('/test', function() {
+    return response()->json(['message' => 'POST fonctionne !']);
+});
 
 // Route pour récupérer l'utilisateur connecté (protégée par Sanctum)
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -38,5 +57,9 @@ Route::apiResource('historiques', HistoriqueController::class);
 Route::post('/register', [LoginController::class, 'register']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::middleware('auth:sanctum')->post('/logout', [LoginController::class, 'logout']);
+*/
 
-?>
+
+Route::post('/test', function() { 
+    return response()->json(['message' => 'POST fonctionne !']);
+});
