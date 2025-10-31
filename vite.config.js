@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
+import path from 'path';
 
 export default defineConfig({
   plugins: [
@@ -10,6 +11,12 @@ export default defineConfig({
     }),
     vue(), // support des fichiers .vue
   ],
+  // Résolution d'alias pratique pour importer depuis resources/js
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'resources/js'),
+    },
+  },
   server: {
     hmr: {
       host: 'localhost', // utile si tu as des problèmes avec le hot reload

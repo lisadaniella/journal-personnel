@@ -22,8 +22,10 @@
           <label class="block text-gray-700 mb-2" for="name">Nom complet</label>
           <input
             v-model="name"
+            name="name"
             type="text"
             id="name"
+            autocomplete="name"
             placeholder="Entrez votre nom complet"
             class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#f9c5d1] transition"
             required
@@ -35,8 +37,10 @@
           <label class="block text-gray-700 mb-2" for="email">Email</label>
           <input
             v-model="email"
+            name="email"
             type="email"
             id="email"
+            autocomplete="email"
             placeholder="Entrez votre email"
             class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#f9c5d1] transition"
             required
@@ -48,8 +52,10 @@
           <label class="block text-gray-700 mb-2" for="password">Mot de passe</label>
           <input
             v-model="password"
+            name="password"
             type="password"
             id="password"
+            autocomplete="current-password"
             placeholder="Entrez votre mot de passe"
             class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#f9c5d1] transition"
             required
